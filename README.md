@@ -14,5 +14,5 @@ In this challenge, we aimed to predict whether a patient has a mutation of the g
 
 Below is an example image:
 
-![Example](images/full_size.png)
+!(images/full_size.png)
 
