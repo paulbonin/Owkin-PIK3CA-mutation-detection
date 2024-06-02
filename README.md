@@ -6,7 +6,7 @@
 
 The code was executed on Google Collab. Data is accessible on the challenge website upon registration.
 
-## The data
+## :microscope: The data
 
 The data consisted in binary annotated histopathology images. In this specific context, each image is refered to as a "slide".
 
@@ -30,14 +30,16 @@ Owkin anticipated that students would not have enough computing power to build a
 
 For each tile, MoCo v2 features were extracted using a Wide ResNet-50-2 pre-trained on TCGA-COAD (histopathology images dataset). Each feature vector has a length of 2048.
 
-Therefore, each slide was represented by a 1000 x 2048 featur matrix.
+Therefore, each slide was represented by a 1000 x 2048 feature matrix.
 
-## The challenge
+## 🏋️ The challenge
 
 The goal of the challenge was to predict whether a patient was a carrier of a genetic mutation of the gene PIK3CA, given a histology slide.
 
 For each slide, the model output must be a float number between 0.0 and 1.0 representing the probability of PIK3CA mutation.
 
-## My approach
+## 👉 My approach
 
-Based on the idea that a genetic mutation is diffuse (as opposed to a cancerous mutation, which is localized), I decided to broadcast the label of the slide to each of its corresponding tile.
+Based on the idea that a genetic mutation is diffuse (as opposed to a cancerous mutation, which is localized), I decided to broadcast the label of the slide to each of its associated tile. By doing so, I had a binary-labelled set of 344,000 vectors of length 2048.
+
+Then, I built a deep convolutional network based on 1-D convolutional layers using the tile feature vectors. The reasonning behind this was to levy the fact that ResNet preserves the geometrical structure of the input image.
