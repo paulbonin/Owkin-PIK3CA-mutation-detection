@@ -12,7 +12,7 @@ The data consisted in binary annotated histopathology images. In this specific c
 
 Due to their extremely large dimensions (100,000 pixels x 100,000 pixels in this case), digital pathology images cannot be processed as is. For each slide, 1000 smaller images (called tiles) of size 224 x 224 pixels were extracted at random in order to reduce data weight.
 
-Each slide is given a binary annotation. Tiles are not annoted. Hence the weak supervision.
+Each slide is given a binary annotation. Tiles are not annotated. Hence the weak supervision.
 
 Below is an example of a full slide:
 
